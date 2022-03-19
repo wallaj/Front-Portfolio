@@ -1,0 +1,15 @@
+ul li{
+    display: inline-block;/*ordena elementos de la lista desordenada en linea con la propiedad display inline-block*/
+    padding: 0px ;
+    vertical-align: middle;/*alinea verticalmente*/
+}
+
+.twitter{
+    margin-right: 15px;
+}
+.linkedin{
+    margin-right: 15px;
+}
+.github{
+    margin-right:  15px;
+}
