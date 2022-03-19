@@ -1,0 +1,14 @@
+#banner{
+    margin-top: 0px;
+}
+#banner img{
+    width: 1583px;
+    height: 427px;
+}
+#fotoPerfil img{
+    position: absolute;
+    margin-top: -60px;
+    border-style:none;
+    border-radius: 75px;
+    margin-left: 15px;
+}
