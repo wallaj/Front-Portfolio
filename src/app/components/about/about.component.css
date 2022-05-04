@@ -1,0 +1,69 @@
+
+.row{
+    padding: 20px;
+    
+}
+div{
+    background-color: rgba(43,42,51,255);
+    color: rgba(251,251,254,255);
+    text-align: center;
+    height: auto;
+
+}
+@media(max-width: 250px){
+    #fotoPerfil{
+        position: absolute;
+        width: 40%;
+        border-radius: 100%;
+        left: 30%;
+        top: 68%;
+    }
+    div #rango{
+        font-weight: bold;
+        font-size: 24px;
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-top: 15%;
+    }
+} 
+@media(max-width: 479px){
+    #fotoPerfil{
+        position: absolute;
+        width: 38%;
+        border-radius: 100%;
+        left: 30%;
+        top: 63%;
+    }
+    div #rango{
+        font-weight: bold;
+        font-size: 24px;
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-top: 15%;
+    }
+}    
+
+/*MEDIA QUERY*/
+@media(min-width: 480px){
+    #fotoPerfil{
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        left: 2%;
+        top: 53%;
+    }
+}
+
+#rango{
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 7px;
+}
+#acerca{
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 7px;
+    margin-right: -20px;
+}
