@@ -7,7 +7,7 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
 const routes: Routes = [
   {path: 'portfolio',component:PortfolioComponent},
   {path: 'login',component:InicioSesionComponent},
-  {path:'',redirectTo:'login',pathMatch:'full'}
+  {path:'',redirectTo:'portfolio',pathMatch:'full'}
 ];//Especificamos las rutas de la aplicación
 
 @NgModule({

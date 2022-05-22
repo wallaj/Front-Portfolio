@@ -12,6 +12,10 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AppRountingModule } from './app-rounting.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +27,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     BannerComponent,
     AboutComponent,
     InicioSesionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     AppRountingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
