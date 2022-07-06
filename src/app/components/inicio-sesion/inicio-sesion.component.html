@@ -1,32 +1,59 @@
-<h2 class="m-5">INICIAR SESIÓN</h2>
-<form [formGroup] = "form" class ="m-5">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email</label>
-      <input type="email" formControlName = "email" 
-      [ngClass]="{'is-invalid':Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
-      class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div *ngIf = "Email?.errors && Email?.touched"><!--directiva cond. para validar mail-->
-        <p *ngIf = "Email?.hasError('required')" class="text-danger">
-            El email es requerido.
-        </p>
-        <p *ngIf= "Email?.hasError('email')" class="text-danger">
-            El formato del email debe ser válido.
-        </p>
+<section class="vh-100% gradient-custom">
+
+  <div class="container py-5 h-100%">
+    <div class="row d-flex justify-content-center align-items-center h-100%">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card  text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold text-danger mb-2 text-uppercase">INICIAR SESIÓN</h2>
+              <p class="text-danger -50 mb-5">Por favor ingrese su email y contraseña</p>
+
+              <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label fw-bold " for="email">Email</label>
+                  <input type="email" id="email" formControlName="email" class="form-control form-control-lg" [(ngModel)]="email" required />
+
+                  <!--<div *ngIf="email && mailUser?.touched">
+                    directiva cond. para validar mail
+                    <p *ngIf="mailUser?.hasError('required')" class="text-danger">
+                      El email es requerido.
+                    </p>
+                    <p *ngIf="mailUser?.hasError('email')" class="text-danger">
+                      El formato del email debe ser válido.
+                    </p>
+                  </div>-->
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label fw-bold" for="password">Contraseña</label>
+                  <input type="password" formControlName="password" class="form-control form-control-lg" [(ngModel)]="password" required />
+
+                  <!--<div *ngIf="Password?.errors && Password?.touched">
+                    directiva cond. para validar password
+                    <p *ngIf="Password?.hasError('required')" class="text-danger">
+                      La contraseña es requerida.
+                    </p>
+                    <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+                      La contraseña debe ser de 8 o más caracteres.
+                    </p>
+                  </div>-->
+                </div>
+
+                <button class="btn btn-outline-danger fw-bold btn-lg px-5" type="submit">LOGIN</button>
+              </form>
+            
+            </div>
+
+            <div>
+              <p class="mb-0">No tenés cuenta? <a href="#!" class="text-danger -50 fw-bold">Registrate</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-      <input type="password" formControlName="password"
-      [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
-      class="form-control" id="exampleInputPassword1">
-      <div *ngIf= "Password?.errors && Password?.touched" ><!--directiva cond. para validar password-->
-        <p *ngIf = "Password?.hasError('required')" class="text-danger">
-            La contraseña es requerida.
-        </p>
-        <p *ngIf= "Password?.errors?.['minlength']" class="text-danger"><!--directiva cond. para validar mail--><!--directiva cond. para validar mail-->
-            La contraseña debe ser de 8 o más caracteres.
-        </p>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
+  </div>
+
+</section>

@@ -1,3 +1,6 @@
+.row{
+    width: auto;
+}
 ul li{
     display: inline-block;/*ordena elementos de la lista desordenada en linea con la propiedad display inline-block*/
     padding: 0px ;
@@ -9,7 +12,8 @@ ul li{
 }
 .linkedin{
     margin-right: 15px;
+
 }
 .github{
     margin-right:  15px;
-}
+}   

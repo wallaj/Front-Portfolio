@@ -1,36 +1,32 @@
-header{
-    background-color:rgba(43,42,51,255);
+.row{
+    width: auto;
+    background-color:rgba(28,27,34,255);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     color: white;
     height: 70px;
-    
 }
-header .menu ul li{
+
+ .menu ul li{
     display: inline-block;/*ordena elementos de la lista desordenada en linea con la propiedad display inline-block*/
     padding: 0px ;
     vertical-align: middle;/*alinea verticalmente*/
 }
-#nombre{
-    margin-left: 10px;
-    margin-right: 60%;
+.logo{
+    margin-right: 77%;
 }
-#nombre a{
-    font-weight: bold;
-    color:springgreen;
-    text-decoration: none;
-    font-size: x-large;
-}
+
 
 .login {
     border-style:solid;
     border-width: 1px;
     border-radius: 4px;
     width: 65px;
-    border-color: springgreen;
+    border-color: #da291c;
     background-color: transparent;
-    color: springgreen;
+    color: #da291c;
+    font-weight: 600;
 }
 .login:hover {
     transform: scale(0.98);

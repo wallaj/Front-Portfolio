@@ -1,25 +1,11 @@
 <div class="row">
     <h1 id="title">FORMACIÓN</h1>
-    <div class="col-lg-11">
-    <ul>
-        <li>
-           <h1>FORMACIÓN 1</h1> <h3> año 1</h3>
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, porro! Quia voluptate aspernatur saepe adipisci et officia quod consequatur eveniet veniam aliquid facere explicabo, vitae praesentium ab rem illo doloribus?</p> 
+    <div class="col-lg-12 container" >
+    <ul>   
+        <li *ngFor="let estudio of estudios">
+           <h1>{{estudio.curso}}</h1>
+           <p>Cursado en {{estudio.lugar}}. Tipo: {{estudio.tipo}}. Estado: {{estudio.estado}}</p> 
         </li>
-        <li>
-            <h1>FORMACIÓN 2</h1> <h3> año 2</h3> 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, porro! Quia voluptate aspernatur saepe adipisci et officia quod consequatur eveniet veniam aliquid facere explicabo, vitae praesentium ab rem illo doloribus?</p> 
-         </li>
-         <li>
-            <h1>FORMACIÓN 3</h1> <h3> año 3</h3> 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, porro! Quia voluptate aspernatur saepe adipisci et officia quod consequatur eveniet veniam aliquid facere explicabo, vitae praesentium ab rem illo doloribus?</p> 
-         </li>
-         <li>
-            <h1>FORMACIÓN 4</h1> <h3> año 4</h3> 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, porro! Quia voluptate aspernatur saepe adipisci et officia quod consequatur eveniet veniam aliquid facere explicabo, vitae praesentium ab rem illo doloribus?</p> 
-         </li>
     </ul>    
-    
 </div>
-    
 </div>

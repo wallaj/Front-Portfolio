@@ -1,10 +1,17 @@
 .row{
     padding: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    
 }
 
 #hard{
+    color: rgba(28,27,34,255);
     font-weight: bold;
+    text-shadow: 1px 1px 5px  rgb(10, 8, 8);
+
 }
 #soft{
+    color: rgba(28,27,34,255);
     font-weight: bold;
+    text-shadow: 1px 1px 5px  rgb(10, 8, 8);
 }

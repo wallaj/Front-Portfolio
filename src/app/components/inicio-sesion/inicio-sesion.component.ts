@@ -1,48 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AutenticacionService } from 'src/app/services/autenticacion.service';
+import { Login } from 'src/app/model/login.model';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.component.html',
   styleUrls: ['./inicio-sesion.component.css']
 })
+
 export class InicioSesionComponent implements OnInit {
-  form:FormGroup;
-  //inyectamos el servicio en el constructor del componente
-  constructor(private formBuilder:FormBuilder, /*private autenticacionService: AutenticacionService, private ruta:Router*/) { 
-    this.form=this.formBuilder.group({
-      //email requerido (no empty), formato email
-      email:['',[Validators.required, Validators.email]], 
-      //password requerido (no empty), mínimo 8 caracteres
-      password:['',[Validators.required, Validators.minLength(8)]],
-      deviceInfo: this.formBuilder.group({
-        deviceId: ["17867868768"],
-        deviceType: ["DEVICE_TYPE_ANDROID"],
-        notificationToken: ["67657575eececc34"]
-      })
-    })
-  }
+  
+  isLogged = false;
+  isLoginFail = false;
+  loginUser!: Login;
+  email!:string;
+  password!:string;
+  roles: string[] = [];
+  errorMsj!:string;
+
+  constructor(private tokenService:TokenService, private authService:AuthService, private router:Router){ }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){ //Comprueba si estamos loggeados. Si devuelve un token, True.
+      this.isLogged = true;
+      this.isLoginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
   }
 
-  get Email(){
-    return this.form.get('email');
+  onLogin(): void{
+    this.loginUser =  new Login(this.email!, this.password!);
+    this.authService.login(this.loginUser).subscribe(data =>{ this.isLogged = true; this.isLoginFail = false;
+        this.tokenService.setToken(data.token!);this.tokenService.setUserName(data.email!), this.tokenService.setAuthorities(data.authorities!);
+        this.roles = data.authorities!; this.router.navigate([' '])}, error =>{this.isLogged = false; this.isLoginFail = true; 
+          this.errorMsj = error.error.mensaje; console.log(this.errorMsj)}
+        );
   }
 
-  get Password(){
-    return this.form.get('password');
-  }
-
- /* onSend(event:Event){
-    event.preventDefault;
-    this.autenticacionService.inicioSesion(this.form.value).subscribe(data=>{
-      console.log("DATA"+ JSON.stringify(data));
-      this.ruta.navigate(['/portfolio']);
-
-    })
-  }*/
 
 }

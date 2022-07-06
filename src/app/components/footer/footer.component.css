@@ -1,0 +1,13 @@
+.row{
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer{
+    color: rgba(28,27,34,255);
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px  rgb(10, 8, 8);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

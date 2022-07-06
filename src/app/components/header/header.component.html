@@ -1,20 +1,17 @@
-<header>
+
+<div class="row">
     <div class="menu">
         <ul>
-            <li>
+            <li class="logo">
                 <app-logo-ap></app-logo-ap>    
-            </li>
-            <li id="nombre">
-                <a href="#">MARCOS URZÚA</a>
             </li>
             <li>
                 <app-rrss></app-rrss>
             </li>
             <li>
-                <a  href="http://localhost:4200/login">
-                    <button class="login">LOGIN</button>
-                </a>
+                <button class="login" (click)="onLogin()">LOGIN</button>
             </li>
         </ul>
-    </div>  
-</header>
+    </div> 
+</div>    
+
