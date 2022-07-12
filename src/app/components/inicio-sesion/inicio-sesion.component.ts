@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/model/login.model';
 import { AuthService } from 'src/app/services/auth.service';
@@ -12,6 +13,11 @@ import { TokenService } from 'src/app/services/token.service';
 
 export class InicioSesionComponent implements OnInit {
   
+  myGroup = new FormGroup({
+    email: new FormControl(),
+    password: new FormControl() 
+  });
+
   isLogged = false;
   isLoginFail = false;
   loginUser!: Login;
@@ -34,8 +40,8 @@ export class InicioSesionComponent implements OnInit {
     this.loginUser =  new Login(this.email!, this.password!);
     this.authService.login(this.loginUser).subscribe(data =>{ this.isLogged = true; this.isLoginFail = false;
         this.tokenService.setToken(data.token!);this.tokenService.setUserName(data.email!), this.tokenService.setAuthorities(data.authorities!);
-        this.roles = data.authorities!; this.router.navigate([' '])}, error =>{this.isLogged = false; this.isLoginFail = true; 
-          this.errorMsj = error.error.mensaje; console.log(this.errorMsj)}
+        this.roles = data.authorities!; this.router.navigate([''])}, err =>{this.isLogged = false; this.isLoginFail = true; 
+          this.errorMsj = err.error.mensaje; console.log(this.errorMsj)}
         );
   }
 

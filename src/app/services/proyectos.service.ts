@@ -7,7 +7,7 @@ import { Proyecto } from '../model/proyecto.model';
   providedIn: 'root'
 })
 export class ProyectosService {
-  URL = 'http://localhost:8080/';
+  URL = 'http://localhost:8080/auth/';
   constructor(private http: HttpClient) { }
 
   public getProyectos(): Observable<Proyecto[]>{

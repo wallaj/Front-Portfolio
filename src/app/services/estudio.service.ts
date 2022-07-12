@@ -7,7 +7,7 @@ import { Estudio } from '../model/estudio.model';
   providedIn: 'root'
 })
 export class EstudioService {
-  URL ='http://localhost:8080/';
+  URL ='http://localhost:8080/auth/';
   constructor(private http: HttpClient) { }
   
   public getEstudios(): Observable<Estudio[]>{

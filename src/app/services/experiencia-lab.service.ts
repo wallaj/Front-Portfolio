@@ -7,7 +7,7 @@ import { ExperienciaLab } from '../model/experienciaLab.model';
   providedIn: 'root'
 })
 export class ExperienciaLabService {
-  URL ='http://localhost:8080/';
+  URL ='http://localhost:8080/auth/';
   constructor(private http: HttpClient) { }
   
   public getExperiencias(): Observable<ExperienciaLab[]>{
