@@ -3,5 +3,6 @@ export interface Skill{
     nombre:string;
     tipo:string;
     nivel:number;
+    path:string;
     userId:number;    
 }

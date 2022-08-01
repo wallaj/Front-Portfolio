@@ -1,5 +1,4 @@
 <section class="vh-100% gradient-custom">
-
   <div class="container py-5 h-100%">
     <div class="row d-flex justify-content-center align-items-center h-100%">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -21,36 +20,9 @@
                     <input type="password" formControlName="password" class="form-control form-control-lg" [(ngModel)]="password" required />
                   </div>  
                 </div>
-
-                
-                  <!--<div *ngIf="email && mailUser?.touched">
-                    directiva cond. para validar mail
-                    <p *ngIf="mailUser?.hasError('required')" class="text-danger">
-                      El email es requerido.
-                    </p>
-                    <p *ngIf="mailUser?.hasError('email')" class="text-danger">
-                      El formato del email debe ser válido.
-                    </p>
-                  </div>-->
-                
-
-                
-                  <!--<div *ngIf="Password?.errors && Password?.touched">
-                    directiva cond. para validar password
-                    <p *ngIf="Password?.hasError('required')" class="text-danger">
-                      La contraseña es requerida.
-                    </p>
-                    <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
-                      La contraseña debe ser de 8 o más caracteres.
-                    </p>
-                  </div>-->
-                
-
                 <button class="btn btn-outline-danger fw-bold btn-lg px-5" type="submit">LOGIN</button>
               </form>
-            
             </div>
-
             <div>
               <p class="mb-0">No tenés cuenta? <a href="#!" class="text-danger -50 fw-bold">Registrate</a>
               </p>
@@ -60,5 +32,4 @@
       </div>
     </div>
   </div>
-
 </section>

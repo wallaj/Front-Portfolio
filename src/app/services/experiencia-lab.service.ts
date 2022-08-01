@@ -13,4 +13,15 @@ export class ExperienciaLabService {
   public getExperiencias(): Observable<ExperienciaLab[]>{
     return this.http.get<ExperienciaLab[]>(this.URL+'ver/experiencias');
   }//método http con el tipo de dato que retorna y como parámetro, la url de la api a ejecutar
+
+  public getExperienciasById(id:number):Observable<ExperienciaLab>{
+    return this.http.get<ExperienciaLab>(this.URL+'ver/experiencia/'+id);
+  }
+
+  public agregarExperiencia(userId:number, exp:ExperienciaLab):Observable<any>{
+    return this.http.post<any>(this.URL+'user/new/experiencia/'+ userId,exp);
+  }
+  public actualizarExperiencia(userId:number, exp:ExperienciaLab):Observable<any>{
+    return this.http.put<any>(this.URL+'user/actualizar/experiencia/'+ userId,exp);
+  }
 }

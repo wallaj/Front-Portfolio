@@ -16,7 +16,12 @@
 .logo{
     margin-right: 77%;
 }
-
+@media((max-width: 1024px)){
+    .logo{
+        margin-right: 64%;
+    }
+    
+}    
 
 .login {
     border-style:solid;

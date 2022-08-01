@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
@@ -20,6 +19,8 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EditExperienciaComponent } from './components/edit-experiencia/edit-experiencia.component';
+import { EditEducacionComponent } from './components/edit-educacion/edit-educacion.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    EditExperienciaComponent,
+    EditEducacionComponent
   ],
   imports: [
     BrowserModule,

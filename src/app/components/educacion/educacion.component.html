@@ -1,11 +1,20 @@
-<div class="row">
-    <h1 id="title">FORMACIÓN</h1>
+<div class="col-sm-12 col-md-12 col-lg-12 row">
+    <div class="cabecera">
+        <ul id="grupo">
+                <li>
+                    <h1 id="title">FORMACION</h1>
+                </li>
+                <li class="img" *ngIf="isLogged">
+                    <img  src="../../assets/img/pencil.png" height="30px" width="30px" class="edit" (click)="onClick()">
+                </li>
+        </ul>
+    </div>
     <div class="col-lg-12 container" >
-    <ul>   
-        <li *ngFor="let estudio of estudios">
-           <h1>{{estudio.curso}}</h1>
-           <p>Cursado en {{estudio.lugar}}. Tipo: {{estudio.tipo}}. Estado: {{estudio.estado}}</p> 
-        </li>
-    </ul>    
-</div>
+        <ul>   
+            <li *ngFor="let estudio of estudios">
+            <h1>{{estudio.curso}}</h1>
+            <p>Cursado en {{estudio.lugar}}. Tipo: {{estudio.tipo}}. Estado: {{estudio.estado}}</p> 
+            </li>
+        </ul>    
+    </div>
 </div>

@@ -13,4 +13,9 @@ export class EstudioService {
   public getEstudios(): Observable<Estudio[]>{
     return this.http.get<Estudio[]>(this.URL+'ver/estudios');
   }
+  public getEstudiosById(id:number): Observable<Estudio>{
+    return this.http.get<Estudio>(this.URL+'ver/estudio/'+id)
+  }
+
+
 }

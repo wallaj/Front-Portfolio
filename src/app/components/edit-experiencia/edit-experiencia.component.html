@@ -1,0 +1,91 @@
+<section class="vh-100% gradient-custom">
+    <div class="container py-5 h-100%">
+      <div class="row d-flex justify-content-center align-items-center h-100%">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card  text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold text-danger mb-4 text-uppercase">EDITAR O CREAR UNA EXPERIENCIA LABORAL</h2>
+                <!--<p class=" text-danger -50 mb-3">Para editar una experiencia existente complete el campo 'Id'</p>-->
+  
+                <form [formGroup] = "myGroup" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="form-outline form-white mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="checkId" formControlName="checkId"  
+                            (change)="onChange()" [(ngModel)]="chkStatus">
+                            <label class="form-check-label text-danger" for="check-label">
+                              Marcar para editar una experiencia ya cargada
+                            </label>
+                        </div>
+                        <div *ngIf="chkStatus">
+                          <label class="form-label fw-bold " for="id">Id</label>
+                          <select id="id" formControlName="id" class="form-control form-control-lg" 
+                          [(ngModel)]="selection" (change) ="onSelected(); onSearch()">
+                              <option></option>
+                              <option *ngFor="let exp of experiencias">{{exp.id}}</option>    
+                          </select>  
+                        </div>    
+                    </div> 
+                    <ng-container  *ngIf="chkStatus;then edit  else noEdit"></ng-container>
+                    <div class="form-outline form-white mb-4">
+                      <ng-template #edit><!--THEN-->
+                        
+                          <label  class="form-label fw-bold" for="compania">Compañia: </label>
+                          <label  class="form-label fw-italic text-danger" for="compania">{{experiencia.compania}}</label>
+                          <input  type="text" formControlName="compa" class="form-control form-control-lg" 
+                           [(ngModel)]="comp" required />
+
+                          <label class="form-label fw-bold" for="ingreso">Fecha de Ingreso: </label>
+                          <label  class="form-label fw-italic text-danger" for="ingreso">{{experiencia.ingreso}}</label>
+                          <input  type="text" formControlName="fIngreso" class="form-control form-control-lg" 
+                           [(ngModel)]="fIngreso" required />
+
+                          <label class="form-label fw-bold" for="salida">Fecha de Salida: </label>
+                          <label  class="form-label fw-italic text-danger" for="salida">{{experiencia.salida}} </label>
+                          <input  type="text" formControlName="fSalida" class="form-control form-control-lg" 
+                           [(ngModel)]="fSalida" required />
+
+                          <label class="form-label fw-bold" for="descripcion">Descripción: </label>
+                          <label  class="form-label fw-italic text-danger" for="descripcion">{{experiencia.descripcion}} </label>
+                          <textarea  formControlName="descrip" class="form-control form-control-lg"  rows="3"
+                          [(ngModel)]="descrip" required ></textarea>
+
+                          <label class="form-label fw-italic text-danger" >
+                            Oh! Encontraste un bug. Un click sobre los controles 'vacíos' o cambiar la opcion 'id' ayuda a renderizar el contenido...</label>
+                          <div class="form-white mb-4"></div>
+                          <button class="btn btn-outline-danger fw-bold btn-lg px-5" type="submit" >EDITAR</button>
+                        
+                      </ng-template>
+                    </div>  
+                    <div class="form-outline form-white mb-4">  
+                      <ng-template #noEdit><!--ELSE-->
+                        
+                          <label class="form-label fw-bold" for="compania">Compañia: </label>
+                          <input type="text" formControlName="compa" class="form-control form-control-lg" 
+                          [(ngModel)]="comp" required />
+
+                          <label class="form-label fw-bold" for="ingreso">Fecha de Ingreso: </label>
+                          <input type="text" formControlName="fIngreso" class="form-control form-control-lg" 
+                            [(ngModel)]="fIngreso" required />
+
+                          <label class="form-label fw-bold" for="salida">Fecha de Salida: </label>
+                          <input  type="text" formControlName="fSalida" class="form-control form-control-lg" 
+                          [(ngModel)]="fSalida" required />
+
+                          <label class="form-label fw-bold" for="descripcion">Descripción: </label>
+                          <textarea  formControlName="descrip" class="form-control form-control-lg" id="descripcion" rows="3"
+                          [(ngModel)]="descrip" required ></textarea>
+                          
+                          <div class="form-white mb-4"></div>
+                          <button class="btn btn-outline-danger fw-bold btn-lg px-5" type="submit" >CARGAR</button>
+                        
+                      </ng-template>                        
+                    </div>
+                  </form>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

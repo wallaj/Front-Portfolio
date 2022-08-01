@@ -1,0 +1,15 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #da291c;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #da291c, whitesmoke);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #da291c, whitesmoke)
+    }
+
+.card{
+    background-color: rgba(28,27,34,255);
+    box-shadow: 2px 2px 10px rgb(10, 8, 8)
+}

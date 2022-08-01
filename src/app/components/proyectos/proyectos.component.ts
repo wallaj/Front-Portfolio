@@ -9,8 +9,7 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
 })
 export class ProyectosComponent implements OnInit {
   proyectos?:Proyecto[];
-
-
+  
   constructor(private proyectosService:ProyectosService) { }
 
   ngOnInit(): void {
